@@ -213,3 +213,20 @@ window.addEventListener('scroll', () => {
     </script>
 </body>
 </html>
+<button onclick="partagerSite()">Partager ce site</button>
+
+<script>
+function partagerSite() {
+    const lien = "https://votre-utilisateur.github.io/supermarket1/";  // Remplacez par votre lien
+    if (navigator.share) {
+        // Partage natif (mobile)
+        navigator.share({
+            title: 'Visitez mon supermarché en ligne',
+            url: lien
+        });
+    } else {
+        // Fallback pour les navigateurs sans support
+        alert("Copiez ce lien : " + lien);
+    }
+}
+</script>
